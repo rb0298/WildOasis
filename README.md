@@ -1,25 +1,61 @@
-Wild Oasis App is a React-based application built on Vite version 4. It fetches data from an Api which is built on supabase and displays the data . Users can add, delete and update the data using the desired options, and the app fetches data amnd updates the data in the suapabase
+# Wild Oasis App
 
-Installation
-To install and run the App locally, follow these steps:
+![Wild Oasis App Screenshot]()
 
-Clone the repository: git clone https://github.com/rb0298/weekday-app.git cd weekday-app
+## Description
 
-Install dependencies: npm install
+Wild Oasis App is a React-based application built on Vite version 4. It interacts with a Supabase API to fetch, display, add, delete, and update data. This website is used for hotel internal management, allowing hotels to manage their data. Please note that the application is currently in the development state.
 
-Usage
-Run the development server: npm run dev
+## Features
 
-Open your browser and navigate to http://localhost:port to view the application. Enter your desired filter options to fetch and display data in cards.
+Fetch Data: Retrieve data from a Supabase API.
+Display Data: Display the fetched data.
+CRUD Operations: Users can add, delete, and update data.
 
-Technologies Used
-React Vite version 4 Material UI Redux HTML/CSS JavaScript
+## Installation
 
-Folder Structure
-The folder structure of the Weekday App is as follows: /public: Contains the HTML file and other public assets. /src: Contains the React components, application logic, and API handling. /src/filters: Contains components for filtering data. /src/cards: Contains components for displaying data in cards.
+To install and run the Wild Oasis App locally, follow these steps:
 
-Configuration
-No special configuration is required to run the Weekday App.
+Clone the repository:
+git clone https://github.com/rb0298/WildOasis.git
+cd WildOasis
 
-Development
-To run the application in development mode: npm run dev
+Install dependencies:
+npm install
+
+# Usage
+
+Run the development server:
+npm run dev
+
+Open your browser and navigate to http://localhost:port to view the application.
+Enter your desired filter options to fetch and display data in cards.
+
+# Technologies Used
+
+React
+Vite version 4
+Styled Components
+React Query
+Context API
+HTML/CSS
+JavaScript
+
+# Folder Structure
+
+The folder structure of the Weekday App is as follows:
+/public: Contains public assets like images.
+/src: Contains the React components, application logic, and API handling.
+/src/pages: Contains page components.
+/src/services: Contains service modules for API handling.
+/src/ui: Contains reusable UI components.
+/src/utils: Contains utility functions and helper modules.
+
+# Configuration
+
+No special configuration is required to run the WildOasis App.
+
+# Development
+
+To run the application in development mode:
+npm run dev
