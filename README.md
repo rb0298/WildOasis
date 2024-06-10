@@ -1,6 +1,6 @@
 # Wild Oasis App
 
-![Wild Oasis App Screenshot](<(wildOasis1.png)(wildOasis2.png)>)
+![Wild Oasis App Screenshot](/public/wildOasis1.png)
 
 ## Description
 
