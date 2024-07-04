@@ -58,11 +58,12 @@ const Button = styled.button`
   color: var(--color-brand-50);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  ${(props) => variations[props.variation]}
 
   &:hover {
     background-color: var(--color-brand-700);
   }
+  ${(props) => variations[props.variation]}
+  ${(props) => sizes[props.size]}
 `;
 Button.defaultProps = {
   variation: "primary",

@@ -3,48 +3,50 @@ import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
 import Table from "../../ui/Table";
-
-// const Table = styled.div`
-//   border: 1px solid var(--color-grey-200);
-
-//   font-size: 1.4rem;
-//   background-color: var(--color-grey-0);
-//   border-radius: 7px;
-//   overflow: hidden;
-// `;
-
-const TableHeader = styled.header`
-  display: grid;
-  grid-template-columns: 0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;
-  column-gap: 2.4rem;
-  align-items: center;
-
-  background-color: var(--color-grey-50);
-  border-bottom: 1px solid var(--color-grey-100);
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  font-weight: 600;
-  color: var(--color-grey-600);
-  padding: 1.6rem 2.4rem;
-`;
+import Menus from "../../ui/Menus";
+import { useSearchParams } from "react-router-dom";
+import Empty from "../../ui/Empty";
+import sortData from "../../utils/sortBy";
+import Input from "../../ui/Input";
 
 function CabinTable() {
-  const { isLoading, cabins } = useCabins();
+  const { isLoading, cabins = [] } = useCabins();
+
+  const [searchParams] = useSearchParams();
   if (isLoading) return <Spinner />;
+  // if (isLoading) return <Spinner />;
+  if (!cabins.length) return <Empty resourceName="Cabins" />;
+
+  // Filter
+  const filterValue = searchParams.get("discount") || "all";
+  console.log(filterValue);
+  let filterCabins;
+  if (filterValue === "all") filterCabins = cabins;
+  if (filterValue === "no-discount")
+    filterCabins = cabins.filter((cabin) => cabin.discount === 0);
+  if (filterValue === "with-discount")
+    filterCabins = cabins.filter((cabin) => cabin.discount > 0);
+
+  const sortBy = searchParams.get("sortBy") || "created_at-asc";
+  const [field, direction] = sortBy.split("-");
+  const sortedCabins = sortData(filterCabins, direction, field);
+
   return (
-    <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;">
-      <Table.Header>
-        <div></div>
-        <div>Cabin</div>
-        <div>Capacity</div>
-        <div>Price</div>
-        <div>Discount</div>
-      </Table.Header>
-      <Table.Body
-        data={cabins}
-        render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
-      />
-    </Table>
+    <Menus>
+      <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;">
+        <Table.Header>
+          <div></div>
+          <div>Cabin</div>
+          <div>Capacity</div>
+          <div>Price</div>
+          <div>Discount</div>
+        </Table.Header>
+        <Table.Body
+          data={sortedCabins}
+          render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
+        />
+      </Table>
+    </Menus>
   );
 }
 export default CabinTable;

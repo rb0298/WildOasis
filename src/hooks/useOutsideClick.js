@@ -4,18 +4,19 @@ export function useOutsideClick(handler, isCapturingPhase = true) {
   useEffect(
     function () {
       const handleCloseModal = (e) => {
-        console.log(e.target, ref.current);
+        console.log("event2");
         if (ref.current && !ref.current.contains(e.target)) {
           handler();
         }
       };
       document.addEventListener("click", handleCloseModal, isCapturingPhase);
-      return () =>
+      return () => {
         document.removeEventListener(
           "click",
           handleCloseModal,
           isCapturingPhase
         );
+      };
     },
 
     [handler, isCapturingPhase]

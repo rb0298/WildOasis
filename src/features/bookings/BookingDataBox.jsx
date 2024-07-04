@@ -31,7 +31,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  svg {
+  & svg {
     height: 3.2rem;
     width: 3.2rem;
   }

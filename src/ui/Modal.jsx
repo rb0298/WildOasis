@@ -3,8 +3,7 @@ import {
   useContext,
   useState,
   cloneElement,
-  useEffect,
-  useRef,
+  useCallback,
 } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
@@ -63,7 +62,10 @@ const ModalContext = createContext();
 function Modal({ children }) {
   const [openName, setOpenName] = useState("");
 
-  const close = () => setOpenName("");
+  const close = useCallback(() => {
+    setOpenName("");
+    console.log("dheieid");
+  }, [setOpenName]);
   const open = setOpenName;
 
   return (
@@ -74,8 +76,11 @@ function Modal({ children }) {
 }
 function Open({ children, opens }) {
   const { open } = useContext(ModalContext);
-
-  return cloneElement(children, { onClick: () => open(opens) });
+  return cloneElement(children, {
+    onClick: () => {
+      open(opens);
+    },
+  });
 }
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);

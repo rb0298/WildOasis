@@ -86,27 +86,23 @@ function CabinRow({ cabin }) {
         <span>&mdash;</span>
       )}
       <div>
+        <button onClick={handleDuplicate} disabled={isCreating}>
+          <HiSquare2Stack />
+        </button>
         <Modal>
-          <Menus.Menu>
-            <Menus.Toggle id={cabinId} />
-            <Menus.List id={cabinId}>
-              <Menus.Button onClick={handleDuplicate} icon={<HiSquare2Stack />}>
-                Duplicate
-              </Menus.Button>
-              <Modal.Open opens="editCabinForm">
-                <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
-              </Modal.Open>
-              <Modal.Open opens="deleteCabin">
-                <Menus.Button disabled={isDeleting} icon={<HiTrash />}>
-                  Delete
-                </Menus.Button>
-              </Modal.Open>
-            </Menus.List>
-          </Menus.Menu>
-
+          <Modal.Open opens="editCabinForm">
+            <button>
+              <HiPencil />
+            </button>
+          </Modal.Open>
           <Modal.Window name="editCabinForm">
             <CreateCabinForm cabinToEdit={cabin} />
           </Modal.Window>
+          <Modal.Open opens="deleteCabin">
+            <button disabled={isDeleting}>
+              <HiTrash />
+            </button>
+          </Modal.Open>
 
           <Modal.Window name="deleteCabin">
             <ConfirmDelete
@@ -116,6 +112,17 @@ function CabinRow({ cabin }) {
             />
           </Modal.Window>
         </Modal>
+
+        <Menus.Menu>
+          <Menus.Toggle id={cabinId} />
+          <Menus.List id={cabinId}>
+            <Menus.Button onClick={handleDuplicate} icon={<HiSquare2Stack />}>
+              Duplicate
+            </Menus.Button>
+            <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
+            <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
+          </Menus.List>
+        </Menus.Menu>
       </div>
     </Table.Row>
   );
