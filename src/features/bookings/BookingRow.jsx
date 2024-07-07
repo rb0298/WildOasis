@@ -15,7 +15,7 @@ import {
   HiEye,
   HiTrash,
 } from "react-icons/hi2";
-import { useCheckout } from "../check-in-out/useCheckOut";
+import { useCheckout } from "../check-in-out/useCheckout";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import { useDeleteBooking } from "./useDeleteBooking";
 

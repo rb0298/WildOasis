@@ -11,7 +11,7 @@ import { useBooking } from "./useBooking";
 import Spinner from "../../ui/Spinner";
 import Modal from "../../ui/Modal";
 import { useDeleteBooking } from "./useDeleteBooking";
-import { useCheckout } from "../check-in-out/useCheckOut";
+import { useCheckout } from "../check-in-out/useCheckout";
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useNavigate } from "react-router-dom";
 
