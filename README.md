@@ -1,10 +1,10 @@
-# Wild Oasis App
+# Giggle Bay Application
 
-![Wild Oasis App Screenshot](/public/wildOasis1.png)
+![Giggle Bay App Screenshot](/public/wildOasis1.png)
 
 ## Description
 
-Wild Oasis App is a React-based application built on Vite version 4. It interacts with a Supabase API to fetch, display, add, delete, and update data. This website is used for hotel internal management, allowing hotels to manage their data. Please note that the application is currently in the development state.
+Giggle Bay App is a React-based application built on Vite version 4. It interacts with a Supabase API to fetch, display, add, delete, and update data. This website is used for hotel internal management, allowing hotels to manage their data. Please note that the application is currently in the development state.
 
 ## Features
 

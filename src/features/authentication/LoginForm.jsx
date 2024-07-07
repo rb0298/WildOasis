@@ -5,15 +5,13 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { useForm } from "react-hook-form";
 
 function LoginForm() {
-  const [email, setEmail] = useState("rb@yahoo.com");
-  const [password, setPassword] = useState("rb@yahoo.com");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
-  const [handleSubmit] = useForm();
 
-  function onSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
     login(
@@ -28,7 +26,7 @@ function LoginForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit}>
       <FormRowVertical label="Email address">
         <Input
           type="email"

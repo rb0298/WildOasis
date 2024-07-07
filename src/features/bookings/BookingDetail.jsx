@@ -11,11 +11,12 @@ import { useBooking } from "./useBooking";
 import Spinner from "../../ui/Spinner";
 import Modal from "../../ui/Modal";
 import { useDeleteBooking } from "./useDeleteBooking";
-
+import { useCheckout } from "../check-in-out/useCheckOut";
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useNavigate } from "react-router-dom";
-import { useCheckout } from "../check-in-out/useCheckOut";
+
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import Empty from "../../ui/Empty";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -31,6 +32,7 @@ function BookingDetail() {
   const { deleteBooking, isDeleting } = useDeleteBooking();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName="booking"></Empty>;
   const { status, id: bookingId } = booking;
 
   const statusToTagName = {

@@ -6,14 +6,12 @@ import { useEffect } from "react";
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
-  console.log("dsads");
 
   const { isLoading, isAuthenticated } = useUser();
   //3 if there is no authenticated user .r,redirect it to the/login
   //useNavigate can only be used at callback and useEffect
   useEffect(
     function () {
-      console.log("dsads2");
       if (!isAuthenticated && !isLoading) navigate("/login");
     },
     [isAuthenticated, isLoading]

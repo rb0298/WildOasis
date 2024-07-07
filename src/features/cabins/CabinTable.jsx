@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
@@ -7,19 +6,19 @@ import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
 import Empty from "../../ui/Empty";
 import sortData from "../../utils/sortBy";
-import Input from "../../ui/Input";
 
 function CabinTable() {
   const { isLoading, cabins = [] } = useCabins();
 
   const [searchParams] = useSearchParams();
+
   if (isLoading) return <Spinner />;
   // if (isLoading) return <Spinner />;
   if (!cabins.length) return <Empty resourceName="Cabins" />;
 
   // Filter
   const filterValue = searchParams.get("discount") || "all";
-  console.log(filterValue);
+
   let filterCabins;
   if (filterValue === "all") filterCabins = cabins;
   if (filterValue === "no-discount")
