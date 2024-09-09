@@ -1,61 +1,65 @@
-# Giggle Bay Application
+# Wild Oasis Application
 
-![Giggle Bay App Screenshot](/public/wildOasis1.png)
+![Wild Oasis App Screenshot](/public/wildOasis.png)
 
 ## Description
 
-Giggle Bay App is a React-based application built on Vite version 4. It interacts with a Supabase API to fetch, display, add, delete, and update data. This website is used for hotel internal management, allowing hotels to manage their data. Please note that the application is currently in the development state.
+WildOasis is a React-based application built on Vite (version 4) that interacts with Supabase API to manage internal hotel operations. The app is designed for hotel staff to fetch, display, add, delete, and update data related to hotel management.
 
 ## Features
 
-Fetch Data: Retrieve data from a Supabase API.
-Display Data: Display the fetched data.
-CRUD Operations: Users can add, delete, and update data.
+- **Data Fetching**: Retrieve hotel-related data from the Supabase API.
+- **Data Display**: Present the fetched data in an organized and intuitive manner.
+- **CRUD Operations**: Perform Create, Read, Update, and Delete operations on hotel data.
+- **User Authentication**: Secure login system for hotel staff.
+- **Data Filtering**: Filter data based on specific criteria.
+
+## Technology Stack
+
+- **React.js**: Frontend framework for building user interfaces.
+- **Styled Components**: For styling components and layouts.
+- **Supabase**: Backend service used for database and API management.
+- **Context API**: For local state management across the application.
+- **React Query**: For handling global state and server-side data fetching.
+
+## Folder Structure
+
+The folder structure of the WildOasis App is organized as follows:
+
+- **/public**: Contains public assets such as images.
+- **/src**: Contains the React components, application logic, and API handling files.
+  - **/src/pages**: Page components for different views of the application.
+  - **/src/services**: Service modules for handling API requests.
+  - **/src/ui**: Reusable UI components.
+  - **/src/utils**: Utility functions and helper modules.
+  - **/src/features**: Contains feature-specific logic and components.
+  - **/src/context**: Context providers and related logic for state management.
+  - **/src/hooks**: Custom React hooks for reusable logic.
 
 ## Installation
 
-To install and run the Wild Oasis App locally, follow these steps:
+To install and run the WildOasis App locally, follow these steps:
 
-Clone the repository:
-git clone https://github.com/rb0298/WildOasis.git
-cd WildOasis
+1. **Clone the Repository**  
+   Clone the repository from GitHub:
 
-Install dependencies:
-npm install
+   ```bash
+   git clone https://github.com/rb0298/WildOasis.git
+   ```
 
-# Usage
+2. **Install Dependencies**
+   npm install
 
-Run the development server:
-npm run dev
+3. **To start the development server:**
+   npm run dev
 
-Open your browser and navigate to http://localhost:port to view the application.
-Enter your desired filter options to fetch and display data in cards.
+## Deployed
 
-# Technologies Used
+The application is deployed and can be accessed at:
 
-React
-Vite version 4
-Styled Components
-React Query
-Context API
-HTML/CSS
-JavaScript
+[https://giggle-bay.vercel.app](WildOasis)
 
-# Folder Structure
+**Login Credentials:**
 
-The folder structure of the Weekday App is as follows:
-/public: Contains public assets like images.
-/src: Contains the React components, application logic, and API handling.
-/src/pages: Contains page components.
-/src/services: Contains service modules for API handling.
-/src/ui: Contains reusable UI components.
-/src/utils: Contains utility functions and helper modules.
-
-# Configuration
-
-No special configuration is required to run the WildOasis App.
-
-# Development
-
-To run the application in development mode:
-npm run dev
+- **Email**: rb@yahoo.com
+- **Password**: rb@yahoo.com
